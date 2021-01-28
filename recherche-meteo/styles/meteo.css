@@ -1,0 +1,146 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f1f1f1;
+    background: linear-gradient(45deg, rgb(59,50,50), rgb(22,28,29));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.formulaire{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#form{
+    position: relative;
+    display: flex;
+}
+#form.input{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+#form label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 8px;
+    transition: all 0.3 ease-in;
+    color: #333;
+}
+#form:focus-within label, #form.active-input label{
+    top: -15px;
+    padding-left: 5px;
+    color: #f1f1f1;
+}
+#form button{
+    padding: 10px;
+}
+.container{
+    width: 600px;
+    height: 400px;
+    background-image: linear-gradient( #622fc0, #3257fc);
+    display: grid;
+    grid-template: 50px 190px 60px 60px 40px / repeat(12, 1fr);
+    margin: 50px auto 0;
+    position: relative;
+    border: 1px solid #f1f1f1;
+}
+
+h1{
+    /* deb row / deb col / fin row / fin col */
+    grid-area: 1 / 1 / 2 / 13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+}
+.bloc-logo-info{
+    grid-area: 2 / 1 / 3 / 13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bloc-heure-prevision{
+    display: grid;
+    grid-area: 3 / 1 / 4 / 13;
+    grid-template: 60px / repeat(12, 1fr);
+}
+.bloc-jour-prevision{
+    display: grid;
+    grid-area: 4 / 1 / 5 / 13;
+    grid-template: 60px / repeat(7, 1fr);
+}
+.bloc-logo-prevision{
+    display: grid;
+    grid-area: 5 / 1 / 6 / 13;
+    grid-template: 40px / repeat(7, 1fr);
+}
+.bloc-logo, .bloc-info1, .bloc-info2{
+    width: 33%;
+}
+.bloc-logo{
+    margin-left: 10%;
+}
+.bloc-logo img{
+    width: 70%;
+    height: auto;
+}
+.pression, .humidite, .temperature, .temps, .localisation{
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+}
+.temperature{
+    font-size: 35px;
+}
+.localisation{
+    word-wrap: break-word;
+}
+.temps::first-letter {
+    text-transform: capitalize;
+}
+.bloc-heure, .bloc-jour{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 1px solid #f1f1f1;
+    font-size: 15px;
+}
+.bloc-heure:not(:last-child), .bloc-jour:not(:last-child), .bloc-icone-meteo:not(:last-child){
+    border-right: 1px solid #f1f1f1;
+}
+.bloc-icone-meteo img{
+    width: 50%;
+    position: relative;
+    top: -20%;
+    left: 20%;
+}
+.temp-prevision{
+    margin-top: 10px;
+}
+
+.icone-chargement {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1.1s ease-out;
+    z-index: 1000;
+}
+.icone-chargement img{
+    width: 100%;
+    height: 100%;
+}
+.disparition {
+    opacity: 0;
+}
