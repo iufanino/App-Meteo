@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AppMétéo</title>
     <link rel="stylesheet" href="styles/meteo.css">
+    <link rel="icon" href="ressources/images.jpeg" type="image/icon">
+    <script src="scripts/meteo.js" defer></script>
 </head>
 <body>
 
     <div class="formulaire">
         <form id="form">
-            <label for="search">Rechercher une ville</label>
-            <input type="search" name="search" id="search" value="">
+            <label for="recherche">Rechercher une ville</label>
+            <input type="recherche" name="recherche" id="recherche" value="">
             <button  value="search" id="button">Go</button>
         </form> 
     </div>
@@ -21,7 +23,7 @@
 
         
         <div class="icone-chargement">
-            <img src="" alt="" class="image-chargement">
+            <img src="ressources/circles.svg" alt="" class="image-chargement">
         </div>
         
         <h1>Application météo</h1>
@@ -35,7 +37,7 @@
             </div>
 
             <div class="bloc-logo">
-                <img src="ressources/circles.svg" alt="logo en fonction de temps qu'il fait" class="logo-meteo">
+                <img src="" class="logo-meteo" alt="logo en fonction de temps qu'il fait">
             </div>
 
                 
@@ -162,7 +164,5 @@
 
     </div>
    
-<script src="scripts/meteo.js"></script> 
-
 </body>
 </html>

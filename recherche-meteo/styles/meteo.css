@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 *, ::before, ::after{
     box-sizing: border-box;
     margin: 0;
@@ -5,13 +7,15 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  'Roboto',  sans-serif;
     color: #f1f1f1;
     background: linear-gradient(45deg, rgb(59,50,50), rgb(22,28,29));
     height: 100vh;
     display: flex;
     flex-direction: column;
 }
+/* Formulaire de recherche */
+
 .formulaire{
     margin-top: 50px;
     display: flex;
@@ -25,8 +29,9 @@ body{
 }
 #form.input{
     padding: 10px;
+    padding-left: 15;
     border: none;
-    outline: none;
+    outline: none; /*conture*/
     border-radius: 10px;
 }
 #form label{
@@ -37,7 +42,8 @@ body{
     transition: all 0.3 ease-in;
     color: #333;
 }
-#form:focus-within label, #form.active-input label{
+#form:focus-within label, 
+#form.active-input label{
     top: -15px;
     padding-left: 5px;
     color: #f1f1f1;
@@ -45,10 +51,13 @@ body{
 #form button{
     padding: 10px;
 }
+
+/* Container central */
+
 .container{
     width: 600px;
     height: 400px;
-    background-image: linear-gradient( #622fc0, #3257fc);
+    background: linear-gradient(170deg, #8e64ef 0, #4d42d4 50%, #0025ba 100%);
     display: grid;
     grid-template: 50px 190px 60px 60px 40px / repeat(12, 1fr);
     margin: 50px auto 0;
@@ -57,7 +66,7 @@ body{
 }
 
 h1{
-    /* deb row / deb col / fin row / fin col */
+    /* debut row / debut col / fin row / fin col */
     grid-area: 1 / 1 / 2 / 13;
     display: flex;
     justify-content: center;
@@ -129,6 +138,8 @@ h1{
 .temp-prevision{
     margin-top: 10px;
 }
+
+/* Chargement de page */
 
 .icone-chargement {
     position: absolute;
