@@ -102,6 +102,8 @@ function appelAPI(lon, lat) {
                 temperatures[j].innerText = `${Math.trunc(resultatsAPI.hourly[j * 2].temp)} c°`  
             }
 
+            //  Les jours de la semaine et temperature pour 7 jours 
+
             for(let k = 0; k < joursEnOrdre.length; k++) { 
                 jours[k].innerText = joursEnOrdre[k].slice(0,3);  
             }
@@ -136,7 +138,7 @@ function chargeImg() {
 }
 //////////////////////////////////////////
 
-const joursSemaine = ['lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']; // On définit un constant et sa valeur est tableau qui contient les jours de la semaine
+const joursSemaine = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']; // On définit un constant et sa valeur est tableau qui contient les jours de la semaine
 
 let aujourdhui = new Date();  // On déclare un variable et sa valeur est la date actuelle (constucteur new Date)
 
@@ -151,7 +153,7 @@ jourActuel = jourActuel.charAt(0).toUpperCase() + jourActuel.slice(1); //On affi
 // La méthode toUpperCase() retourne la valeur de la chaîne courante, convertie en majuscules.
 // La méthode slice() renvoie un objet tableau, contenant une copie superficielle d'une portion du tableau d'origine, la portion est définie par un indice de début et un indice de fin. Le tableau original ne sera pas modifié.
 
-console.log(jourActuel);
+//console.log(jourActuel);
 
 let joursEnOrdre = joursSemaine.slice(joursSemaine.indexOf(jourActuel)).concat(joursSemaine.slice(0, joursSemaine.indexOf(jourActuel)));
 /* Avec slice on va découper notre tableau qui contient les jours de la semaine, il nous faut un debut et une fin, 
@@ -160,7 +162,7 @@ avec slice on découpe notre tableau qui contient les jours de la semaine mais p
 joursSemaine.indexOf(jourActuel) nous retourne mercredi, jeudi, vendredi, samedi et dimanche,  on rajoute avec concat nouveau tableau, 
 des le premier element (0) jusqu'à jour actuel, donc lundi et mardi */
 
-console.log(joursEnOrdre);
+//console.log(joursEnOrdre);
 
 
         
